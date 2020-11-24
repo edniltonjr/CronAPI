@@ -7,6 +7,7 @@ const ListarPlanosController = require('./controllers/ProdutoSeguro/ListarPlanos
 const BuscarCartoesDisponiveisController = require('./controllers/SaqueComplementar/BuscarCartoesDisponiveisController');
 const BuscaLimiteSaqueController = require('./controllers/SaqueComplementar/BuscarLimiteSaqueController');
 
+const contador = require('./controllers/Contador');
 const cpfs = require('./controllers/ConsultaCPF');
 const startWS = require('./startWS');
 
@@ -32,5 +33,6 @@ routes.get('/cpfs', cpfs.index);
 routes.get('/startWS', startWS.startWS);
 
 routes.get('/rodar', startWS.startCron);
+routes.get('/contador', contador.index);
 
 module.exports = routes;

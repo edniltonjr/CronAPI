@@ -183,6 +183,7 @@ module.exports = {
     }
     catch(err) {
       console.log(err)
+      await axios.get('http://localhost:3000/v0/rodar');
     }
     response.json('APLICACAO EXECUTADA')
 

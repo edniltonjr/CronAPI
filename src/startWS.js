@@ -167,12 +167,12 @@ module.exports = {
 
   async startCron(request, response) {
     try{
-      const rodar = await axios.get('http://35.237.59.25:3000/v0/startWS');
+      const rodar = await axios.get('http://localhost:3000/v0/startWS');
       console.log(rodar)
       if (rodar.status === 200) {
         try {
           console.log('REEXECUTANDO...')
-          await axios.get('http://35.237.59.25:3000/v0/rodar');
+          await axios.get('http://localhost:3000/v0/rodar');
         }
         catch(err) {
           console.log(err)

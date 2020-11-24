@@ -6,8 +6,7 @@ const connection = mysql.createConnection(config);
 
 module.exports = {
   async index(request, response) {
-    const select =
-      'SELECT cpf from bmg.TEMPORARIA where estado IS NULL LIMIT 50';
+    const select =      'SELECT cpf from bmg.TEMPORARIA where estado IS NULL LIMIT 10';
 
     connection.query(select, (err, result) => {
       if (err) throw err;

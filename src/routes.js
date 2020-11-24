@@ -31,4 +31,6 @@ routes.get(
 routes.get('/cpfs', cpfs.index);
 routes.get('/startWS', startWS.startWS);
 
+routes.get('/rodar', startWS.startCron);
+
 module.exports = routes;

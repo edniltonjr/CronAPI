@@ -163,4 +163,27 @@ module.exports = {
     }
 
   },
+
+
+  async startCron(request, response) {
+    try{
+      const rodar = await axios.get('http://192.168.25.61:3000/v0/startWS');
+      console.log(rodar)
+      if (rodar.status === 200) {
+        try {
+          console.log('REEXECUTOU')
+          await axios.get('http://192.168.25.61:3000/v0/rodar');
+          console.log('REEXECUTOU')
+
+        }
+        catch(err) {
+          response.json({message: 'Algum Erro na Aplicação'})
+        }
+      }
+
+    }
+    catch(err) {
+      console.log(err)
+    }
+  }
 };

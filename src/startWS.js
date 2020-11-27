@@ -118,10 +118,11 @@ async function f(row) {
       throw err
     }
 
-    console.log(err.response.data)
+    console.log('aqui',err.response.data)
 
-    const sql1 = `INSERT INTO bmg.WS_seguro (cpf, ehElegivel, motivoElegibilidade) VALUES ('${row.cpf}', '${false}', '${err.response.data.message
-      }')`;
+    const sql1 = `INSERT INTO bmg.WS_seguro (cpf, ehElegivel, motivoElegibilidade) VALUES ('${row.cpf}', '${false}', "${err.response.data.message
+      }")`;
+ console.log(sql1);
     await connection.query(sql1);
     console.log('CARTAO INSERIDO COM SUCESSO');
 
